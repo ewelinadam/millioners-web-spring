@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Show Next Question</title>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+    <div>
+        <th:block>
+
+            <td th:text="${question.question}"></td>
+
+            <form th:action="@{/question}" method="POST">
+                <button><a th:field="*{answerFromPlayer}" th:value="${question.answerA}">
+                    <td th:text="${question.answerA}">
+                </a></button>
+            </form>
+
+            <form th:action="@{/question}" method="POST">
+                <button><a th:field="*{answerFromPlayer}" th:value="${question.answerB}">
+                    <td th:text="${question.answerB}">
+                </a></button>
+            </form>
+
+            <form th:action="@{/question}" method="POST">
+                <button><a th:field="*{answerFromPlayer}" th:value="${question.answerC}">
+                    <td th:text="${question.answerC}">
+                </a></button>
+            </form>
+
+            <form th:action="@{/question}" method="POST">
+                <button><a th:field="*{answerFromPlayer}" th:value="${question.answerD}">
+                    <td th:text="${question.answerD}">
+                </a></button>
+            </form>
+
+        </th:block>
+    </div>
+</div>
+
+</body>
+
+</html>

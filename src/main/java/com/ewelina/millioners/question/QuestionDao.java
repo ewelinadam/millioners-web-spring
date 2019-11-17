@@ -12,7 +12,7 @@ public class QuestionDao {
 
     private List<Question> listOfQuestions = createListOfQuestionObjects();
 
-    private final String PATH = "files/a.txt";
+    private final String PATH = "D:\\kurs_java\\projects\\millioners\\src\\main\\resources\\static\\question.txt";
 
     private final int NUM_OF_QUEST = 6;
 
