@@ -19,30 +19,36 @@
             <td th:text="${question.question}"></td>
 
             <form th:action="@{/question}" method="POST">
-                <button><a th:field="*{answerFromPlayer}" th:value="${question.answerA}">
+                <button type="submit" th:name="answerFromPlayer" th:value="A">
                     <td th:text="${question.answerA}">
-                </a></button>
+                </button>
             </form>
 
             <form th:action="@{/question}" method="POST">
-                <button><a th:field="*{answerFromPlayer}" th:value="${question.answerB}">
+                <button type="submit" th:name="answerFromPlayer" th:value="B">
                     <td th:text="${question.answerB}">
-                </a></button>
+                </button>
             </form>
 
             <form th:action="@{/question}" method="POST">
-                <button><a th:field="*{answerFromPlayer}" th:value="${question.answerC}">
+                <button type="submit" th:name="answerFromPlayer" th:value="C">
                     <td th:text="${question.answerC}">
-                </a></button>
+                </button>
             </form>
 
             <form th:action="@{/question}" method="POST">
-                <button><a th:field="*{answerFromPlayer}" th:value="${question.answerD}">
+                <button type="submit" th:name="answerFromPlayer" th:value="D">
                     <td th:text="${question.answerD}">
-                </a></button>
+                </button>
             </form>
 
         </th:block>
+
+        <form th:action="@{/question}" method="GET">
+            <button type="submit">
+               Next Question
+            </button>
+        </form>
     </div>
 </div>
 

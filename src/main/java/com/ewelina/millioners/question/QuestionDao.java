@@ -1,5 +1,8 @@
 package com.ewelina.millioners.question;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
 import java.io.BufferedReader;
@@ -8,28 +11,16 @@ import java.io.IOException;
 import java.util.*;
 
 @Repository
+@Getter
+@Setter
+@NoArgsConstructor
 public class QuestionDao {
-
-    private List<Question> listOfQuestions = createListOfQuestionObjects();
 
     private final String PATH = "D:\\kurs_java\\projects\\millioners\\src\\main\\resources\\static\\question.txt";
 
-    private final int NUM_OF_QUEST = 6;
+    public final List<Question> questions = createListOfQuestionObjects();
 
     //TODO: Write some tests!!
-
-    public Set<Question> generateQuestionSet(){
-
-        Set<Question> listToPlay = new HashSet<>();
-        int limit = listOfQuestions.size();
-
-        while (listToPlay.size() < NUM_OF_QUEST) {
-            Random random = new Random();
-            listToPlay.add(listOfQuestions.get(random.nextInt(limit)));
-        }
-
-        return listToPlay;
-    }
 
 
     //reads data from txt file and
@@ -47,7 +38,7 @@ public class QuestionDao {
     }
 
     //creates List of Question Objects
-    private List<Question> createListOfQuestionObjects() {
+   List<Question> createListOfQuestionObjects() {
         List<Question> questionList = new ArrayList<>();
 
         List<String> lines = null;
@@ -73,4 +64,4 @@ public class QuestionDao {
         return questionList;
     }
 
-}
+    }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Builder
 public class Question {
+//    private int Id;
     private String question;
     private String answerA;
     private String answerB;
